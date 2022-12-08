@@ -1,3 +1,9 @@
+<?php 
+
+session_start(); //to use session in index.php from adminMiddleware.php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

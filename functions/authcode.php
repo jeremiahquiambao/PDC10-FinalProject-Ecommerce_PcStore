@@ -3,6 +3,8 @@
 session_start(); //always add this if you're going to use session 
 
 include('../config/dbcon.php');
+include('myfunctions.php'); //included because we used the function redirect() 
+
 
 if(isset($_POST['register_btn'])) //when register button clicked 
 {
@@ -65,15 +67,34 @@ else if(isset($_POST['login_btn'])) //when login button clicked
         $userdata = mysqli_fetch_array($login_query_run); //login_query_run will bring the  data and put it in the $userdata variable
         $username = $userdata['firstName']; //firstName is from database then storing to $username variable
         $useremail = $userdata['email'];
-        
+        $role_as = $userdata['role_as'];
 
         $_SESSION['auth_user'] = [
             'firstName' => $username, //fetch from login_query
             'email' => $useremail
         ];   
 
-        $_SESSION['message'] = "Logged In Successfully";
-        header('Location: ../index.php');
+        //Checking if admin or user 
+        $_SESSION['role_as'] = $role_as; 
+
+        if($role_as == 1) //if admin 
+        {
+            redirect("../admin/index.php", "Welcome to Dashboard"); 
+
+            /* Same as like this 
+             $_SESSION['message'] = "Welcome to Dashboard";
+             header('Location: ../admin/index.php');
+            */
+        }
+        else 
+        {
+            redirect("../index.php", "Logged In Successfully"); 
+            /*
+            $_SESSION['message'] = "Logged In Successfully";    
+            header('Location: ../index.php');
+            */
+        }
+
     }
     else
     {

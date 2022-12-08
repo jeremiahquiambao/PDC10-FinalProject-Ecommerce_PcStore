@@ -1,7 +1,7 @@
 <?php 
 session_start(); //always add this if you're going to use session
 
-//Session Alert Message when try to login again
+//Session Alert Message when user try to login again
 if(isset($_SESSION['auth'])) 
 {
     $_SESSION['message'] = "You are already logged In";
@@ -26,7 +26,7 @@ include('includes/header.php');
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     <?php
-                        //Once the message has been displayed, we need to unset the session to remove all session variables
+                        //Once the message has been displayed, we need to unset the session to remove the variable stored in the session variable and use it to store different message in different situations
                         unset($_SESSION['message']);
                 }
                 ?>

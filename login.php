@@ -1,7 +1,7 @@
 <?php
 session_start(); //always add this if you're going to use session
 
-//Session Alert Message when try to login again
+//Session Alert Message when user try to login again
 if(isset($_SESSION['auth'])) 
 {
     $_SESSION['message'] = "You are already logged In";
