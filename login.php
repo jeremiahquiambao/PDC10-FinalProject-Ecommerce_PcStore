@@ -1,10 +1,12 @@
 <?php
 session_start(); //always add this if you're going to use session
 
-if(isset($_SESSION['auth']))
+//Session Alert Message when try to login again
+if(isset($_SESSION['auth'])) 
 {
     $_SESSION['message'] = "You are already logged In";
     header('Location: index.php');
+    exit(); //So that this page will not continue to execute after the line above
 }
 
 include('includes/header.php');

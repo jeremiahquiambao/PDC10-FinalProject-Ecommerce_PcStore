@@ -17,7 +17,7 @@
                 </li>
 
                 <?php
-                if (isset($_SESSION['auth'])) 
+                if (isset($_SESSION['auth'])) //if auth is true, means logged in successfully 
                 {
                     ?>
                         <li class="nav-item dropdown">

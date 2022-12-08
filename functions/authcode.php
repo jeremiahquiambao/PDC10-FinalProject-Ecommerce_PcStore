@@ -53,17 +53,17 @@ if(isset($_POST['register_btn'])) //when register button clicked
 else if(isset($_POST['login_btn'])) //when login button clicked
 {
     $email = mysqli_real_escape_string($con, $_POST['email']);
-    $email = mysqli_real_escape_string($con, $_POST['password']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
 
     $login_query = "SELECT * FROM users WHERE email='$email' AND password='$password' "; //checking user details in  database 
     $login_query_run = mysqli_query($con, $login_query);
 
-    if(mysqli_num_rows($login_query_run) < 0)
+    if(mysqli_num_rows($login_query_run) > 0)
     {
         $_SESSION['auth'] = true;
 
-        $userdata = mysqli_fetch_array($login_query_run); //login_query_run will bring the data and put it in the $userdata variable
-        $username = $userdata['firstName']; //from firstName is from database then storing to $username variable
+        $userdata = mysqli_fetch_array($login_query_run); //login_query_run will bring the  data and put it in the $userdata variable
+        $username = $userdata['firstName']; //firstName is from database then storing to $username variable
         $useremail = $userdata['email'];
         
 
