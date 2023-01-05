@@ -1,7 +1,7 @@
 <?php 
 
+include('../middleware/adminMiddleware.php'); 
 include('includes/header.php');
-include('middleware/adminMiddleware.php'); 
 
 ?>
 
@@ -14,7 +14,7 @@ include('middleware/adminMiddleware.php');
                 <div class="card-header">
                     <h4>Categories</h4>
                 </div>
-                <div class="card-body">
+                <div class="card-body" id="category_table">
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -22,7 +22,8 @@ include('middleware/adminMiddleware.php');
                                 <th>Name</th>
                                 <th>Image</th>
                                 <th>Status</th>
-                                <th>Action</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,11 +45,14 @@ include('middleware/adminMiddleware.php');
                                                      <?= $item['status'] == '0'? "Visible":"Hidden"; ?> <!-- this will only show if it's visible or hidden  -->
                                                 </td>
                                                 <td>
-                                                    <a href="edit-category.php?id=<?= $item['id']; ?>" class="btn btn-primary">Edit</a>
-                                                    <form action="code.php" method="POST">
+                                                    <a href="edit-category.php?id=<?= $item['id']; ?>" class="btn btn-sm btn-primary">Edit</a>
+                                                </td>
+                                                <td>
+                                                    <!-- <form action="code.php" method="POST">
                                                         <input type="hidden" name="category_id" value="<?= $item['id']; ?>">
-                                                        <button type="submit" class="btn btn-danger" name="delete_category_btn">Delete</button>
-                                                    </form>
+                                                        <button type="submit" class="btn btn-sm btn-danger" name="delete_category_btn">Delete</button>
+                                                    </form> -->
+                                                    <button type="button" class="btn btn-sm btn-danger delete_category_btn" value="<?= $item['id']; ?>" >Delete</button> <!-- using the delete_category_btn class name, we're going to fetch the product id when delete button is click using jquery   -->
                                                 </td>
                                             </tr>
                                         <?php

@@ -1,7 +1,7 @@
 <?php 
 
+include('../middleware/adminMiddleware.php');
 include('includes/header.php');
-include('middleware/adminMiddleware.php');
 
 ?>
 
@@ -23,7 +23,9 @@ include('middleware/adminMiddleware.php');
                         ?>
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Edit Product</h4>
+                                    <h4>Edit Product
+                                        <a href="products.php" class="btn btn-primary float-end">Back</a>
+                                    </h4>
                                 </div>
                                 <div class="card-body">
                                     <form action="code.php" method="POST" enctype="multipart/form-data"> <!-- enctype is used in form element that have a file upload, in this form that we created it's for uploading the image -->
@@ -47,10 +49,10 @@ include('middleware/adminMiddleware.php');
                                                         {
                                                             echo "No category available";
                                                         }
-                                                    
                                                     ?>
                                                 </select>
                                             </div>
+                                            <input type="hidden" name="product_id" value="<?= $data['id']; ?>">
                                             <div class="col-md-6">
                                                 <label class=mb-0 for="">Name</label>
                                                 <input type="text" required name="name" value="<?= $data['name']; ?>" placeholder="Enter Product Name" class="form-control mb-2">  <!-- css will be found on header.php style  -->
@@ -78,7 +80,7 @@ include('middleware/adminMiddleware.php');
                                             <div class="col-md-12">
                                                 <label class=mb-0 for="">Upload Image</label>
                                                 <input type="hidden" name="old_image" value="<?= $data['image']; ?>"> <!-- this is when the user not updating the image, so we're just going to fetch the old image name, then update that thing -->
-                                                <input type="file" required name="image" class="form-control mb-2">  
+                                                <input type="file"   name="image" class="form-control mb-2">  
                                                 <label class=mb-0 for="">Current Image</label>
                                                 <img src="../uploads/<?= $data['image']; ?>" alt="Product Image" height="50px" width="50px">
                                             </div>
@@ -89,11 +91,11 @@ include('middleware/adminMiddleware.php');
                                                 </div>
                                                 <div class="col-md-3">
                                                     <label class=mb-0 for="">Status</label>
-                                                    <input type="checkbox" name="status" value="<?= $data['status']; ?>" >  
+                                                    <input type="checkbox" name="status" <?= $data['status'] == '0'? '':'checked' ?> >  <!-- 0 means visible(unchecked), 1 means invisible that's why need to be check -->
                                                 </div>
                                                 <div class="col-md-3">
                                                     <label class=mb-0 for="">Trending</label>
-                                                    <input type="checkbox" name="trending" value="<?= $data['trending']; ?>">  
+                                                    <input type="checkbox" name="trending" <?= $data['trending'] == '0'? '':'checked' ?> >  
                                                 </div>
                                             </div>
                                             <div class="col-md-12">

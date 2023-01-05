@@ -1,7 +1,7 @@
 <?php 
 
+include('../middleware/adminMiddleware.php');
 include('includes/header.php');
-include('middleware/adminMiddleware.php');
 
 ?>
 
@@ -23,7 +23,9 @@ include('middleware/adminMiddleware.php');
                     ?>  
                         <div class="card">
                             <div class="card-header">
-                                <h4>Edit Category</h4>
+                                <h4>Edit Category
+                                    <a href="category.php" class="btn btn-primary float-end">Back</a>
+                                </h4>
                             </div>
                             <div class="card-body">
                                 <form action="code.php" method="POST" enctype="multipart/form-data"> <!-- enctype is used in form element that have a file upload, in this form that we created it's uploading the image,-->

@@ -1,7 +1,7 @@
 <?php 
 
+include('../middleware/adminMiddleware.php');
 include('includes/header.php');
-include('middleware/adminMiddleware.php');
 
 ?>
 
@@ -48,10 +48,10 @@ include('middleware/adminMiddleware.php');
                                 <label class=mb-0 for="">Slug</label>
                                 <input type="text" required name="slug" placeholder="Enter slug" class="form-control mb-2">  
                             </div>
-                            <!-- <div class="col-md-12">
+                            <div class="col-md-12">
                                 <label class=mb-0 for="">Small Description</label>
                                 <textarea rows="3" name="small_description" placeholder="Enter small description" class="form-control mb-2"></textarea>
-                            </div> -->
+                            </div>
                             <div class="col-md-12">
                                 <label class=mb-0 for="">Description</label>
                                 <textarea rows="3" required name="description" placeholder="Enter description" class="form-control mb-2"></textarea>

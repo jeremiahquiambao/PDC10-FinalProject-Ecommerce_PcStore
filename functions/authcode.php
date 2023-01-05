@@ -65,11 +65,13 @@ else if(isset($_POST['login_btn'])) //when login button clicked
         $_SESSION['auth'] = true;
 
         $userdata = mysqli_fetch_array($login_query_run); //login_query_run will bring the  data and put it in the $userdata variable
+        $userid = $userdata['id'];
         $username = $userdata['firstName']; //firstName is from database then storing to $username variable
         $useremail = $userdata['email'];
         $role_as = $userdata['role_as'];
 
         $_SESSION['auth_user'] = [
+            'user_id' => $userid,
             'firstName' => $username, //fetch from login_query
             'email' => $useremail
         ];   

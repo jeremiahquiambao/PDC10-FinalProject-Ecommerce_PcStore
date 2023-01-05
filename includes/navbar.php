@@ -13,13 +13,16 @@
                     <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="categories.php">Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.php">Cart</a> <!-- Need to be fix, put on the isset auth so that it would only visible to user when they log in -->
                 </li>
 
                 <?php
-                if (isset($_SESSION['auth'])) //if auth is true, means logged in successfully 
+                if (isset($_SESSION['auth'])) //if auth is true, means logged in successfully and user account w/firstname will be displayed 
                 {
-                    ?>
+                    ?> <!-- For User Account Display if login or not -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                <?= $_SESSION['auth_user']['firstName'];?>

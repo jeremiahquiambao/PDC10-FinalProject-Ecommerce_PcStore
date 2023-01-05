@@ -1,9 +1,13 @@
 <?php 
 
+include('../middleware/adminMiddleware.php');
 include('includes/header.php');
-include('middleware/adminMiddleware.php');
 
-?>
+/*Testing purposes - this will output current script to set the element/item to active 
+echo substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'],"/")+1); */
+
+
+?>  
 
 
 
@@ -84,4 +88,4 @@ include('middleware/adminMiddleware.php');
     </div>
 </div>
 
-<?php include('includes/footer.php') ?>
+<?php include('includes/footer.php'); ?>
