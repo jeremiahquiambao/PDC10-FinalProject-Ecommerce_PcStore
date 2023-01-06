@@ -86,6 +86,7 @@ include('authenticate.php'); //for user authentication when trying to access thi
                                 <hr>
                             <h5>Total Price : <span class="float-end fw-bold">&#8369;<?= $english_format_number = number_format($totalPrice); ?></span></h5>
                             <div class="">
+                                <input type="hidden" name="payment_mode" value="COD"> 
                                 <button type="submit" name="placeOrderBtn" class="btn btn-primary w-100">Confirm and place order | COD</button> <!-- placeOrderBtn will be found on placeorder.php -->
                             </div>
                         </div>

@@ -46,6 +46,16 @@ function getCartItems()
 
 }
 
+//Function to fetch myorders page 
+function getOrders()
+{
+    global $con;    
+    $userId = $_SESSION['auth_user']['user_id'];
+
+    $query = "SELECT * FROM orders WHERE user_id='$userId' ORDER BY id DESC";
+    return $query_run = mysqli_query($con, $query); 
+}
+
 function redirect($url, $message) //function if everytime we want to redirect the user
 { 
     $_SESSION['message'] = $message; 
