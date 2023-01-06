@@ -2,7 +2,8 @@
 $(document).ready(function () {
     
     //Increment Button - max of 10 qty only 
-    $('.increment-btn').click(function (e) { 
+    // $('.increment-btn').click(function (e) { //we need to use jqon instead of jqclick. NOTE: Once page is reloaded - the jqclick will not work, the quantity that you increment or decrement would go back to its original when you place the order once its reloaded  
+    $(document).on('click','.increment-btn', function (e) {
         e.preventDefault();
         
         //If you have multiple products in the same page, then if we want to increment this, we'll use the closest function 
@@ -19,7 +20,9 @@ $(document).ready(function () {
     });
 
     //Decrement Button 
-    $('.decrement-btn').click(function (e) { 
+    // $('.decrement-btn').click(function (e) { 
+    $(document).on('click','.decrement-btn', function (e) {
+
         e.preventDefault();
         
         //If you have multiple products in the same page, then if we want to increment this, we'll use the closest function 
@@ -36,7 +39,9 @@ $(document).ready(function () {
     });
 
     //ADD TO CART USING JQUERY
-    $('.addToCartBtn').click(function (e) { 
+    // $('.addToCartBtn').click(function (e) { //we've switched jqclick to jqon just in case we'll have multiple cart buttons so that it will not error 
+    $(document).on('click','.addToCartBtn', function (e) {
+
         e.preventDefault();
         
         //When the user click the addToCartBtn then we need to fetch the inputted value 
@@ -93,4 +98,30 @@ $(document).ready(function () {
         });
     });
     
+    $(document).on('click','.deleteItem', function () {
+        var cart_id = $(this).val();
+        // alert(cart_id);
+         
+        $.ajax({
+            method: "POST", 
+            url: "functions/handlecart.php",
+            data: {
+                "cart_id" : cart_id,
+                "scope" : "delete" //will be found on handlecart.php
+            },
+            success: function (response) {
+                // alert(response); //testing purposes 
+                if(response == 200)    
+                {
+                    alertify.success("Item deleted successfully"); 
+                    $('#mycart').load(location.href + " #mycart"); //to automatically refresh when deleting an item, #mycart should have space after double quote 
+                }
+                else 
+                {
+                    alertify.success(response); 
+                }
+            }
+        });
+    });
+
 });

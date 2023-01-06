@@ -40,7 +40,7 @@ if(isset($_POST['add_category_btn']))
 
         redirect("add-category.php", "Category Added Successfully");
     }
-    else //if the query does not run successully, there will an error, we're just going to redirect the user back to the add-category page
+    else //if the query does not run successully, there will be an error, we're just going to redirect the user back to the add-category page
     {
         redirect("add-category.php", "Something Went Wrong");
     }
@@ -133,6 +133,7 @@ else if(isset($_POST['delete_category_btn']))
 else if(isset($_POST['add_product_btn']))
 {
     $category_id = $_POST['category_id'];
+
     $name = $_POST['name'];
     $slug = $_POST['slug'];
     $small_description = $_POST['small_description'];
@@ -154,12 +155,12 @@ else if(isset($_POST['add_product_btn']))
     $image_ext = pathinfo($image, PATHINFO_EXTENSION); 
 
     //This will redeem the file 
-    $filename = time().'.'.$image_ext; 
+    $filename = time().'.'.$image_ext;  
 
     //Server-side validation part which we don't want to allow null in these fields before inserting it in the database 
-    if($name != "" && $slug != "" && $description != "") 
+    if($name != "" && $slug != "" && $description != "") //If none of these fields not equal null then that's the only time that we going to proceed
     {
-        $product_query = "INSERT INTO products (category_id, name, slug, small_description, description, original_price, selling_price, qty, meta_title, meta_description, meta_keywords, status, trending, image) VALUES ('$category_id', '$name', '$slug', '$small_description', $description', '$original_price', '$selling_price', '$qty', '$meta_title', '$meta_description', '$meta_keywords', '$status', '$trending', '$filename')";
+        $product_query = "INSERT INTO products (category_id, name, slug, small_description, description, original_price, selling_price, qty, meta_title, meta_description, meta_keywords, status, trending, image) VALUES ('$category_id', '$name', '$slug', '$small_description', '$description', '$original_price', '$selling_price', '$qty', '$meta_title', '$meta_description', '$meta_keywords', '$status', '$trending', '$filename')";
 
         //SQL Query function 
         $product_query_run = mysqli_query($con, $product_query);

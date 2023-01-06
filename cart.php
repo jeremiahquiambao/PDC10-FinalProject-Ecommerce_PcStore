@@ -39,41 +39,47 @@ include('authenticate.php'); //for user authentication when trying to access thi
                             <h6>Remove</h6>
                         </div>
                     </div>
-                    <?php $items = getCartItems(); //getCartItems() will be found in userfunctions.php
 
-                    foreach ($items as $c_item)
-                    {
-                        ?> 
-                        <div class="card product_data shadow-sm mb-3">
-                            <div class="row align-items-center">
-                                <div class="col-md-2">
-                                    <img src="uploads/<?= $c_item['image']; ?>" alt="Product Image" class="w-50">
-                                </div>
-                                <div class="col-md-3">
-                                    <h5><?= $c_item['name']; ?></h5>
-                                </div>
-                                <div class="col-md-3">
-                                    <?php $selling_price = $c_item['selling_price']; ?>
-                                    <h5>&#8369;<span class="fw-bold"><?= $english_format_number = number_format($selling_price); ?></span></h5>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="hidden" class="prodId" value="<?= $c_item['prod_id']; ?>">
-                                    <div class="input-group mb-2" style="width:130px">
-                                        <button class="input-group-text decrement-btn updateQty">-</button>
-                                        <input type="text" class="form-control bg-white text-center input-qty" value="<?= $c_item['prod_qty']; ?>" disabled> 
-                                        <button class="input-group-text increment-btn updateQty">+</button> 
+                    <div id="mycart"> <!-- we've created mycart to use it in custom.js for automatic refresh when deleting an item -->
+                        <?php $items = getCartItems(); //getCartItems() will be found in userfunctions.php
+
+                        foreach ($items as $c_item)
+                        {
+                            ?> 
+                            <div class="card product_data shadow-sm mb-3">
+                                <div class="row align-items-center">
+                                    <div class="col-md-2">
+                                        <img src="uploads/<?= $c_item['image']; ?>" alt="Product Image" class="w-50">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h5><?= $c_item['name']; ?></h5>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <?php $selling_price = $c_item['selling_price']; ?>
+                                        <h5>&#8369;<span class="fw-bold"><?= $english_format_number = number_format($selling_price); ?></span></h5>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="hidden" class="prodId" value="<?= $c_item['prod_id']; ?>"> <!-- prodId will be found on custom.js -->
+                                        <div class="input-group mb-2" style="width:130px">
+                                            <button class="input-group-text decrement-btn updateQty">-</button>
+                                            <input type="text" class="form-control bg-white text-center input-qty" value="<?= $c_item['prod_qty']; ?>" disabled> 
+                                            <button class="input-group-text increment-btn updateQty">+</button> 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button class="btn btn-danger btn-sm deleteItem" value="<?= $c_item['cid']; ?>"> <!--cid means carts id that we've assigned in query of function getCartItems in userfunctions.php, deleteItem will be found of custom.js -->
+                                        <i class="fa fa-trash me-2"></i>Remove</button>
                                     </div>
                                 </div>
-                                <div class="col-md-2">
-                                    <button class="btn btn-danger btn-sm">
-                                    <i class="fa fa-trash me-2"></i>Remove</button>
-                                </div>
                             </div>
-                        </div>
 
-                        <?php 
-                    }
-                    ?>
+                            <?php 
+                        }
+                        ?>
+                    </div>
+                    <div class="float-end">
+                        <a href="checkout.php" class="btn btn-outline-primary">Proceed to checkout</a>
+                    </div>
                 </div>
             </div>
         </div>

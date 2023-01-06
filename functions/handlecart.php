@@ -79,6 +79,37 @@ if(isset($_SESSION['auth']))
                 } 
                 
                 break;
+
+            case "delete": 
+                $cart_id = $_POST['cart_id'];
+                
+
+                $user_id = $_SESSION['auth_user']['user_id']; //for authentication of user, to make sure that the cart belongs to login user itself  
+
+                //This will check if product existing in cart, if true delete else something went wrong 
+                $chk_existing_cart = "SELECT * FROM carts WHERE id='$cart_id' AND user_id='$user_id' ";
+                $chk_existing_cart_run = mysqli_query($con, $chk_existing_cart);
+
+                //echo messages will be found on custom.js
+                if(mysqli_num_rows($chk_existing_cart_run) > 0) //if the product is in the user's cart, then we'll delete the record 
+                {       
+                    //Making sure that only authenticated user can delete the product in the cart 
+                    $delete_query = "DELETE FROM carts WHERE id='$cart_id' "; 
+                    $delete_query_run = mysqli_query($con, $delete_query);
+
+                    //echo messages will be found on ajax success: function (response) in custom.js
+                    if($delete_query_run){
+                        echo 200;
+                    }else{
+                        echo "Something went wrong";
+                    }
+                }
+                else //if there's no existing product in the cart
+                {
+                    echo "Something went wrong";
+                } 
+
+                break;
             default:
                 echo 500; //something went wrong message
         }

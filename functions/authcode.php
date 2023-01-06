@@ -8,7 +8,7 @@ include('myfunctions.php'); //included because we used the function redirect()
 
 if(isset($_POST['register_btn'])) //when register button clicked 
 {
-    $fname = mysqli_real_escape_string($con, $_POST['fname']); //we added mysql_real_escape_string function to prevent sql injection, $con variable will be found in config/dbcon.php
+    $fname = mysqli_real_escape_string($con, $_POST['fname']); //we added mysql_real_escape_string($database_connection, $value) function to prevent sql injection, $con variable will be found in config/dbcon.php
     $lname = mysqli_real_escape_string($con, $_POST['lname']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $phone = mysqli_real_escape_string($con, $_POST['phone']);
