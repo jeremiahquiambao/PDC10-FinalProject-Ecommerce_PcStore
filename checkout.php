@@ -43,7 +43,7 @@ include('authenticate.php'); //for user authentication when trying to access thi
                                     <input type="text" name="phone" required placeholder="Enter your phone number" class="form-control">
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label class="fw-bold">Pin Code</label>
+                                    <label class="fw-bold">Zip Code</label>
                                     <input type="text" name="pincode" required placeholder="Enter your pin code" class="form-control">
                                 </div>
                                 <div class="col-md-12 mb-3">

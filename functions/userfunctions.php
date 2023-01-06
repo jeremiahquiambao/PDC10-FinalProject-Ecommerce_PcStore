@@ -12,6 +12,15 @@ function getAllActive($table)
     return $query_run = mysqli_query($con, $query); //$con is the dbcon.php
 } 
 
+//Function to fetch trending products
+function getAllTrending() 
+{
+    global $con; // $con is now defined as global so that this variable will not search inside the function and will understand that the variable is from the outside this function or else it will throw an error that it is undefined even we already include the dbcon.php
+    $query = "SELECT * FROM products WHERE trending='1' "; //when status=0 --it will show as active, status=1 --it will not be visible to user
+    return $query_run = mysqli_query($con, $query); //$con is the dbcon.php
+} 
+
+
 //Function to get the single row which is active - used in products.php
 function getIDActive($table, $id) // When we pass on the table name and id, then we will get the query from the database
 {
@@ -41,7 +50,7 @@ function getCartItems()
     global $con;    
     $userId = $_SESSION['auth_user']['user_id']; //To make sure that it's also authenticated user 
     $query = "SELECT c.id as cid, c.prod_id, c.prod_qty, p.id as pid, p.name, p.image, p.selling_price 
-                FROM carts c, products p WHERE c.prod_id=p.id AND c.user_id='$userId' ORDER BY c.id DESC ";
+                FROM carts c, products p WHERE c.prod_id=p.id AND c.user_id='$userId' ORDER BY c.id DESC "; //displaying orders by id in descending order
     return $query_run = mysqli_query($con, $query); //we pass the connection which is the $con and the query which is the $query
 
 }
@@ -55,6 +64,7 @@ function getOrders()
     $query = "SELECT * FROM orders WHERE user_id='$userId' ORDER BY id DESC";
     return $query_run = mysqli_query($con, $query); 
 }
+
 
 function redirect($url, $message) //function if everytime we want to redirect the user
 { 
@@ -70,6 +80,16 @@ function redirect($url, $message) //function if everytime we want to redirect th
     header('Location: ../admin/index.php');
     
     */
+}
+
+//Function to authenticate tracking no.
+function checkTrackingNoValid($trackingNo)
+{
+    global $con;    
+    $userId = $_SESSION['auth_user']['user_id']; //the tracking number would only be shown if it belong to the user
+
+    $query = "SELECT * FROM orders WHERE tracking_no='$trackingNo' AND user_id='$userId' ";
+    return mysqli_query($con, $query);
 }
 
 ?>

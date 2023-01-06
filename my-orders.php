@@ -54,7 +54,7 @@ include('authenticate.php'); //for user authentication when trying to access thi
                                             
                                             <td> <?= $item['created_at']; ?> </td>
                                             <td>
-                                                <a href="#" class="btn btn-success">View details</a>
+                                                <a href="view-order.php?t=<?= $item['tracking_no']; ?>" class="btn btn-success">View details</a>
                                             </td>
                                         </tr>
                                     <?php

@@ -13,6 +13,10 @@
     <!-- Custom CSS -->
     <link href="assets/css/custom.css" rel="stylesheet">
 
+    <!-- Owl Carousel CSS -->
+    <link href="assets/css/owl.theme.default.min.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.min.css" rel="stylesheet">
+
     <!-- Google Font Roboto, OPTIONAL-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

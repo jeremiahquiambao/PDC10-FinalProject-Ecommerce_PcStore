@@ -7,6 +7,9 @@
 <!-- Custom JS -->
 <script src="assets/js/custom.js"></script>
 
+<!-- OWL Carouses JS -->
+<script src="assets/js/owl.carousel.min.js"></script>
+
 <!-- ALERTIFY JS - will be use for Redirection -->
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 

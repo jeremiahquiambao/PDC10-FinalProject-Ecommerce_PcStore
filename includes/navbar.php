@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark shadow">
     <div class="container">
         <a class="navbar-brand" href="index.php">
             <img src="assets/images/virus.png" width="35" height="30" class="d-inline-block align-text-top" alt="main_logo">
