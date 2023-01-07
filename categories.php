@@ -4,7 +4,7 @@ include('functions/userfunctions.php');  //this line of code need to go first so
 include('includes/header.php'); 
 
 ?>
-<div class="py-3 bg-primary">
+<div class="py-3 bg-danger">
     <div class="container">
         <h6 class="text-white">Home / Categories</h6>
     </div>

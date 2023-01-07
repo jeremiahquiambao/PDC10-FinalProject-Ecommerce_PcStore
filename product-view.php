@@ -13,7 +13,7 @@ if(isset($_GET['product'])) //If the word product in url is correct, only then w
     if($product)
     {
         ?>
-        <div class="py-3 bg-primary">
+        <div class="py-3 bg-danger">
             <div class="container">
                 <h6 class="text-white">
                     <a class="text-white" href="categories.php">

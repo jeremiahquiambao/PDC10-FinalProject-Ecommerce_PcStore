@@ -39,19 +39,19 @@ include('includes/header.php');
                         <form action="functions/authcode.php" method="POST">
                             <div class="mb-3">
                                 <label class="form-label">First Name</label>
-                                <input type="text" name="fname" class="form-control" placeholder="Enter first name">
+                                <input type="text" name="fname" required class="form-control" placeholder="Enter first name">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Last Name</label>
-                                <input type="text" name="lname" class="form-control" placeholder="Enter last name">
+                                <input type="text" name="lname" required class="form-control" placeholder="Enter last name">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Phone</label>
-                                <input type="number" name="phone" class="form-control" placeholder="Enter your phone number">
+                                <input type="number" name="phone" required class="form-control" placeholder="Enter your phone number">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email address">
+                                <input type="email" name="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email address">
                                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                             </div>
                             <div class="mb-3">
@@ -60,7 +60,7 @@ include('includes/header.php');
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Confirm Password</label>
-                                <input type="password" name="cpassword" class="form-control" id="exampleInputPassword1" placeholder="Confirm password">
+                                <input type="password" name="cpassword" minlength="8"required class="form-control" id="exampleInputPassword1" placeholder="Confirm password">
                             </div>
 
                             <button type="submit" name="register_btn" class="btn btn-primary">Register</button>

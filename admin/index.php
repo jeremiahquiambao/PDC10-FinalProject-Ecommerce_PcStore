@@ -86,7 +86,7 @@ echo substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'],"/")+1); */
             </div>
         </div> -->
 
-        <img src="assets/images/adminpic.png" height="80%" alt="admin pic">
+        <img src="assets/images/adminpic.png"   alt="admin pic">
     </div>
 </div>
 

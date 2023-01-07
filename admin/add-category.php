@@ -19,11 +19,11 @@ include('includes/header.php');
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="">Name</label>
-                                <input type="text" name="name" placeholder="Enter Category Name" class="form-control">  <!-- css will be found on header.php style  -->
+                                <input type="text" name="name" required placeholder="Enter Category Name" class="form-control">  <!-- css will be found on header.php style  -->
                             </div>
                             <div class="col-md-6">
                                 <label for="">Slug</label>
-                                <input type="text" name="slug" placeholder="Enter slug" class="form-control">  
+                                <input type="text" name="slug" required placeholder="Enter slug" class="form-control">  
                             </div>
                             <div class="col-md-12">
                                 <label for="">Description</label>

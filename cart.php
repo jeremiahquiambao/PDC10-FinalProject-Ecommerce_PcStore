@@ -7,7 +7,7 @@ include('authenticate.php'); //for user authentication when trying to access thi
 
 ?>
 
-<div class="py-3 bg-primary">
+<div class="py-3 bg-danger">
     <div class="container">
         <h6 class="text-white">
             <a href="index.php" class="text-white">
