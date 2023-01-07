@@ -46,7 +46,7 @@ include('includes/header.php');
                                 <textarea rows="3" name="meta_keywords" placeholder="Enter meta keywords" class="form-control"></textarea>
                             </div>
                             <div class="col-md-6">
-                                <label for="">Status</label>
+                                <label for="">Hidden</label>
                                 <input type="checkbox" name="status">  
                             </div>
                             <div class="col-md-6">

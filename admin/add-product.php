@@ -74,7 +74,7 @@ include('includes/header.php');
                                     <input type="number" required name="qty" placeholder="Enter Quantity" class="form-control mb-2">  
                                 </div>
                                 <div class="col-md-3">
-                                    <label class=mb-0 for="">Status</label>
+                                    <label class=mb-0 for="">Hidden</label>
                                     <input type="checkbox" name="status">  
                                 </div>
                                 <div class="col-md-3">

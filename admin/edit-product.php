@@ -90,7 +90,7 @@ include('includes/header.php');
                                                     <input type="number" required name="qty" value="<?= $data['qty']; ?>" placeholder="Enter Quantity" class="form-control mb-2">  
                                                 </div>
                                                 <div class="col-md-3">
-                                                    <label class=mb-0 for="">Status</label>
+                                                    <label class=mb-0 for="">Hidden</label>
                                                     <input type="checkbox" name="status" <?= $data['status'] == '0'? '':'checked' ?> >  <!-- 0 means visible(unchecked), 1 means invisible that's why need to be check -->
                                                 </div>
                                                 <div class="col-md-3">

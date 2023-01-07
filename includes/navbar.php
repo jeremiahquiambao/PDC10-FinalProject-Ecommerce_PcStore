@@ -2,7 +2,7 @@
     <div class="container">
         <a class="navbar-brand" href="index.php">
             <img src="assets/images/virus.png" width="35" height="30" class="d-inline-block align-text-top" alt="main_logo">
-            Tech Grounds
+            Techno Hub
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,8 +28,8 @@
                                <?= $_SESSION['auth_user']['firstName'];?>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <!-- <li><a class="dropdown-item" href="#">Action</a></li> -->
+                                <li><a class="dropdown-item" href="my-orders.php">My Orders</a></li>
                                 <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                             </ul>
                         </li>

@@ -48,12 +48,11 @@ include('includes/slider.php');
                 <h4>About Us</h4>
                 <div class="underline mb-2"></div>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, eos quam in quo ullam natus incidunt aliquid ducimus error corporis, autem, voluptas delectus velit unde vitae sed quas qui praesentium ex? Quis perspiciatis inventore odio soluta voluptas architecto facilis veniam.
+                    We are the Tech Grounds team. A user can register and log in at this company's online store for computers. A llowing customers to select the internal or external component they would like to buy, such as graphics cards, displays, processors, and more.
                 </p>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, eos quam in quo ullam natus incidunt aliquid ducimus error corporis, autem, voluptas delectus velit unde vitae sed quas qui praesentium ex? Quis perspiciatis inventore odio soluta voluptas architecto facilis veniam.
+                    At Tech Grounds, we work hard to give users outstanding service so they can receive a good bargain when we run sales so they can buy things for less.
                     <br>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita libero totam consectetur, illo consequatur pariatur id animi itaque dolore veritatis tempore blanditiis, corrupti nemo veniam nam obcaecati sapiente similique omnis architecto nesciunt laudantium accusamus repellendus corporis rerum. Rem, ut odit.
                 </p>
             </div>
         </div>

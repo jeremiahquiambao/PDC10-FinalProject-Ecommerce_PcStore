@@ -63,7 +63,7 @@ include('includes/header.php');
                                             <textarea rows="3" name="meta_keywords" placeholder="Enter meta keywords" class="form-control"><?= $data['meta_keywords'] ?></textarea>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="">Status</label>
+                                            <label for="">Hidden</label>
                                              <input type="checkbox" <?= $data['status'] ? "checked":"" ?> name="status"> <!--if it's true that means it's 1, then we have to keep it checked or print it checked, else leave it like that  -->
                                         </div>
                                         <div class="col-md-6">

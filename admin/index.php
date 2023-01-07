@@ -13,7 +13,7 @@ echo substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'],"/")+1); */
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <!-- <div class="col-md-12">
             <div class="row mt-4">
                 <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
                     <div class="card">
@@ -84,7 +84,9 @@ echo substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'],"/")+1); */
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+
+        <img src="assets/images/adminpic.png" height="80%" alt="admin pic">
     </div>
 </div>
 
